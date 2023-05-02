@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="vender/jquery.min.js"></script>
+  <script src="vender/jquery.ns-autogrow.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="vender/semantic-ui/semantic.min.css">
+  <script src="vender/semantic-ui/semantic.min.js"></script>
+
+  <script src="vender/download-as-file.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Web Speech to Text</title>
+</head>
+<body>
+
+  <div class="ui container">
+    <h1>Web Speech to Text</h1>
+  </div>
+  
+  <div class="ui two column grid container">
+    <div class="four wide column">
+      
+      
+      <div class="recognition-status" data-recognition-status="ready">
+        <div class="fluid ui basic vertical buttons">
+          <a class="fluid ui button load-local-file-btn">
+            Load Local File
+          </a>
+          <a class="fluid ui button load-url-btn">
+            Load from URL
+          </a>
+        </div>
+        
+        
+        <div class="fluid ui icon button primary start-btn">
+          <i class="play icon"></i>
+          Start
+        </div>
+        
+        <div class="fluid ui icon disabled button warning playing-btn">
+          <i class="wait icon"></i>
+          Playing
+        </div>
+        
+        <div class="positive fluid ui icon disabled button finish-btn">
+          <i class="check icon"></i>
+          Finish
+        </div>
+      </div>
+        
+    </div>
+    <div class="twelve wide column">
+      <div id="audio_player">
+        <video controls class="audio-player" style="display: block;max-width: 320px;max-height: 180px;">
+          <source src="demo.mp4" type="video/mp4">
+          Your browser does not support the audio element.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <form class="ui form container">
+    
+    <div class="three fields content-controller">
+      <div class="field">
+        <label>File Name</label>
+        <input type="text" class="filename" value="File Name" />
+      </div>
+      <div class="field">
+        <label>Language</label>
+        <select class="lang">
+          <option value="vi-VN">
+            vi-VN
+          </option>
+          <option value="en-US">
+            en-US
+          </option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Output type</label>
+        <select class="output-data-type">
+          <option value="pdf">
+            Plain text (.pdf)
+          </option>
+          <option value="str">
+            Subtitle (.str)
+          </option>
+          <option value="txt">
+            Plain text (.txt)
+          </option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Export</label>
+        <button type="button" class="ui fluid disabled button primary download-btn">
+          <i class="icon download"></i>
+          Export
+        </button>
+      </div>
+    </div>
+
+    <table class="ui striped table thead">
+      <thead>
+        <tr>
+          <th class="co_quan">
+            Cơ quan
+          </th>
+          <th class="tinh_trang">
+            Tình trạng
+          </th>
+        </tr>
+      </thead>
+    </table>
+    <table class="ui striped table tbody">
+      <tbody class="text-content">
+      </tbody>
+    </table>
+    
+  </form>
+  
+  <script src="script.js"></script>
+  <script src="file-loader.js"></script>
+</body>
+</html>

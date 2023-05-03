@@ -22,9 +22,7 @@
 
   <div id="speechToText">
   
-  <div class="ui container">
-    <p style="float:right"><a href="http://blog.pulipuli.info/2019/01/web-speech-to-text-speech-recognition.html" target="blog">by<br />布丁布丁吃什麼？</a></p>
-    
+  <div class="ui container">    
     <h1>{{ i18n.t('Web Speech to Text') }}</h1>
     <div class="ui floating compact warning icon message virtual-audio-cable-warning">
       <i class="microphone icon"></i>   
@@ -68,7 +66,7 @@
         
         <div class="fluid ui icon disabled button warning playing-btn">
           <i class="wait icon"></i>
-          {{ i18n.t('Playing') }}
+          {{ i18n.t('Starting') }}
         </div>
         
         <div class='finish-time'>
@@ -162,14 +160,10 @@
       <thead>
         <tr>
           <th class="start">
-            {{ i18n.t('Start from') }}
-          </th>
-          <th class="hyper">-</th>
-          <th class="end">
-            {{ i18n.t('End in') }}
+            {{ i18n.t('Item') }}
           </th>
           <th class="caption">
-            {{ i18n.t('Caption') }}
+            {{ i18n.t('Status') }}
           </th>
         </tr>
       </thead>
@@ -197,22 +191,18 @@
               <u style='cursor: pointer;' 
                  v-on:click="changeLang('cmn-Hant-TW');loadFromURLValue='https://www.youtube.com/watch?v=GE7sc_XvJ8w';loadFromURL()">
                 https://www.youtube.com/watch?v=GE7sc_XvJ8w 
-                ({{ i18n.t('cmn-Hant-TW') }})
               </u>, <br />
               <u style='cursor: pointer;' 
                  v-on:click="changeLang('cmn-Hant-TW');loadFromURLValue='https://www.youtube.com/watch?v=cUh978LguQk';loadFromURL()">
                 https://www.youtube.com/watch?v=cUh978LguQk
-                ({{ i18n.t('Long video') }})
               </u>, <br />
               <u style='cursor: pointer;' 
                  v-on:click="changeLang('ja');loadFromURLValue='https://www.youtube.com/watch?v=P7qfM0Q2wkk';loadFromURL()">
                 https://www.youtube.com/watch?v=P7qfM0Q2wkk
-                ({{ i18n.t('ja') }})
               </u>, <br />
               <u style='cursor: pointer;' 
                  v-on:click="changeLang('ko');loadFromURLValue='https://www.youtube.com/watch?v=PAKVWL7XdWo';loadFromURL()">
                 https://www.youtube.com/watch?v=PAKVWL7XdWo
-                ({{ i18n.t('ko') }})
               </u>
             </li>
             <li v-on:click="loadFromURLValue='demo.mp4'">{{ i18n.t('Video:') }} <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Supported_media_formats" target="format_help">{{ i18n.t('MP4 format with code VP8, VP9, H.264') }}</a></li>
